@@ -1,26 +1,25 @@
-import logo from './logo.svg';
-import './App.css';
+import { Route, Routes, Navigate } from "react-router-dom";
+import Contact from "./components/contact/Contact";
+import Faq from "./components/faq/Faq";
+import Home from "./components/home/Home";
+import Navbar from "./components/navbar/Navbar";
+import StarMaker from "./components/starMaker/StarMaker";
+import StarsGlowsKit from "./components/starsGlowsKit/StarsGlowsKit";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="app">
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<Navigate replace to="/home" />} />
+          <Route path="/home" element={<Home />} />
+          <Route path="/stars_glows_kit" element={<StarsGlowsKit />} />
+          <Route path="/star_maker" element={<StarMaker />} />
+          <Route path="/faq" element={<Faq />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
     </div>
   );
-}
-//dupa
+};
 
 export default App;
