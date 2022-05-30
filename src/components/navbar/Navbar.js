@@ -1,28 +1,41 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  NavLink,
+} from "react-router-dom";
+import "./navbar.scss";
 
 const Navbar = () => {
   return (
     <nav>
-      <ul>
-        <li>
-          <Link to="/home">Home</Link>
-        </li>
-        <li>
-          <Link to="/stars-glows-kit">Stars Glows Kit</Link>
-        </li>
-        <li>
-          <Link to="/star-maker">Star Maker</Link>
-        </li>
-        <li>
-          <Link to="/faq">FaQ</Link>
-        </li>
-        <li>
-          <Link to="contact">Contact</Link>
-        </li>
-      </ul>
+      <div>
+        <img src="../images/logostars.svg" alt="home"></img>
+      </div>
+      <div className="navbarul">
+        <ul>
+          <li>
+            <NavLink className="" to="/home">
+              Home
+            </NavLink>
+          </li>
+          <li>
+            <NavLink to="/stars-glows-kit">Stars Glows Kit</NavLink>
+          </li>
+          <li>
+            <NavLink to="/star-maker">Star Maker</NavLink>
+          </li>
+          <li>
+            <NavLink to="/faq">FaQ</NavLink>
+          </li>
+          <li>
+            <NavLink to="contact">Contact</NavLink>
+          </li>
+        </ul>
+      </div>
     </nav>
   );
 };
 
-export default Navbar
+export default Navbar;
